@@ -1,0 +1,59 @@
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button2 {background-color: #008CBA;} /* Blue */
+    .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+    .button5 {background-color: #555555;} /* Black */
+
+    table, td, th {  
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    th, td {
+    padding: 15px;
+    }
+</style>
+
+<h1> Hola MVC </h1>
+<p> Tarea CRUD - Nancy Elizabeth Medina Ramirez A01338470
+</p>
+<button onclick="window.location.href= '/about-us'" class="button button2"> Acerca de nosotros </button>
+<button onclick="window.location.href= '/products/create'" class="button"> Agregar productos </button>
+
+
+<table>
+    <tr>
+        <th>Id del producto</th>
+        <th>Nombre</th>
+        <th>Ver producto</th>
+        <th>Editar producto</th>
+    </tr>
+    {{#each productos}}
+    <tr>
+        
+        <td> {{ id }} </td>
+        <td> {{ name }} </td>
+        <td><button onclick="window.location.href= '/products/{{ id }}'" class="button button4"> Ver </button></td>
+        <td><button onclick="window.location.href= '/products/{{ id }}/edit'" class="button button5"> Editar </button></td>
+    </tr>
+    {{/each}}
+</table>
+
+ 

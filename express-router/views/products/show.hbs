@@ -1,0 +1,53 @@
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button3 {background-color: #f44336;} /* Red */ 
+
+    table, td, th {  
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    th, td {
+    padding: 15px;
+    }
+</style>
+
+<h1>Productos</h1>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <th>Precio</th>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <th>Descripcion</th>
+        <td>{{product.description}}</td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <form method="POST" action="/products/{{ product.id }}?_method=DELETE">
+                <input type="submit" value="Eliminar" class="button button3">
+            </form>
+        </td>
+    </tr>
+</table>
